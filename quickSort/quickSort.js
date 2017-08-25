@@ -17,3 +17,5 @@ var quickSort = function(arr) {
     //  使用递归不断重复这个过程，就可以得到排序后的数组。
 　　return quickSort(left).concat([pivot], quickSort(right));
 };
+
+console.log(quickSort([2,4,5,6,2,3,4,6,7,7,54,31]))
