@@ -14,5 +14,5 @@ function People(name, age) {
 }
 
 var cat = new People("夏君", "18");    
-cat.sayName();   
-cat.sayAge();  
+cat.sayName();    //夏君
+cat.sayAge();     //18
