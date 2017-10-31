@@ -153,12 +153,13 @@ function toJson(arr) {
     var temp = [];
     var forFn = function(arr){
         for (var i = 0; i < arr.length; i++) {
-            if(!!arr[i].children.length) {
-                temp.push(arr[i])
-            } else {
-                temp.push(arr[i])
+            if(arr[i].children.length == 0) {
+                delete arr[i].children
             }
-            forFn(arr[i].children)
+            temp.push(arr[i])
+            if(!!arr[i].children) {
+                forFn(arr[i].children)
+            }
         }
     };
     forFn(arr);
@@ -166,7 +167,7 @@ function toJson(arr) {
 }
 
 let json = toJson(a)
-// console.log(json)
+console.log(json)
 
 // 根据id找到所有父级id
 function familyTree(arr, pid) {
@@ -184,5 +185,5 @@ function familyTree(arr, pid) {
     return temp;
 }
 
-let res = familyTree(json, '5936978a8dbf5a0a90e10abf') // 电视id
-console.log(res)
+// let res = familyTree(json, '5936978a8dbf5a0a90e10abf') // 电视id
+// console.log(res)

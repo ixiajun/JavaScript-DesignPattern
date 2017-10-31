@@ -10,6 +10,7 @@ var data = [
     {id: 9, address: "上海", parent_id: 0},
     {id: 10, address: "黄浦区", parent_id: 9},
     {id: 11, address: "外滩", parent_id: 10},
+     {id: 123, address: "dasd外滩", parent_id: 10},
     {id: 12, address: "安庆", parent_id: 1}
 ];
 
@@ -48,4 +49,4 @@ function familyTree(arr, pid) {
 var tree = sonsTree(data,10);
 var family = familyTree(data,12)
 console.log(tree)
-console.log(family)
+// console.log(family)

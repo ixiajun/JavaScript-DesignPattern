@@ -2,7 +2,7 @@ function flatten(arr) {
     let temp = []
     var forfn = function(arr) {
         arr.forEach(i => {
-            if(typeof i == 'object') {
+            if(i instanceof Array) {
                 forfn(i)
             } else {
                 temp.push(i)
@@ -13,4 +13,4 @@ function flatten(arr) {
     return temp
 }
 
-flatten([1, [2], [3, [['4']]]])   // [1,2,3,'4']
+console.log(flatten([1, [2], [3, [['4']]]]))   // [1,2,3,'4']
